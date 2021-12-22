@@ -1,2 +1,5 @@
 1. buat management postCategory (seed)-> Berita, Artikel, Penggumuman, Info PPDB
 2. buat management post (CRUD) -> post_category_id, title, content, image
+- simpan menjadi html dengan styling
+- rata kiri, kanan, tengah, bold, italic, underscore
+- image simpan di storage:post (buat folder baru)
