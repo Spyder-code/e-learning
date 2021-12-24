@@ -43,7 +43,7 @@
          </div>
 
          <div class="cta d-none d-md-flex align-items-center">
-            <a href="#about" class="scrollto">Penggumuman</a>
+            <a href="{{ route('user.post', ['pengumuman']) }}" class="scrollto">Penggumuman</a>
          </div>
       </div>
    </section>
@@ -85,7 +85,8 @@
                </li>
                <li class="dropdown"><a href="#"><span>Informasi PPDB</span> <i class="bi bi-chevron-down"></i></a>
                   <ul>
-                     <li><a href="#">Informasi PPDB</a></li>
+                     <li><a href="{{ route('user.postdetail', ['informasi-ppdb', 1]) }}">Informasi
+                           PPDB</a></li>
                      <li><a href="#">Pendaftaran PPDB</a></li>
                      <li><a href="#">Hasil Penggumuman</a></li>
                   </ul>

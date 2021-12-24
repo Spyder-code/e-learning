@@ -154,15 +154,12 @@ class PostController extends Controller
    public function destroy(Post $post)
    {
       Post::destroy($post->id);
-      $imgName = explode('/storage/post/', $post->image);
-      Storage::delete('post/'.$imgName[1]);
+      if ($post->image) {
+         $imgName = explode('/storage/post/', $post->image);
+         Storage::delete('post/'.$imgName[1]);
+      };
       Session::flash('success', 'Berhasil Menghapus Materi');
       return redirect()->route('post.index');
-   }
-   
-   public function show(Post $post)
-   {
-      
    }
 
 }

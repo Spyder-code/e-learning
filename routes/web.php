@@ -118,12 +118,7 @@ Route::domain('ctrl'.env('APP_URL'))->group(function () {
 
 Route::get('/', 'PageController@index')->name('user.index');
 Route::get('/{postname}', 'PageController@post')->name('user.post');
-Route::get('/{postname}/{id}/{year}/{title?}', 'PageController@postDetail')->name('user.postdetail');
-
-// Route::get('/berita', 'PageController@berita')->name('user.berita');
-// Route::get('/berita/{id}', 'PageController@beritaDetail')->name('user.beritadetail');
-// Route::get('/artikel', 'PageController@artikel')->name('user.artikel');
-// Route::get('/pengumuman', 'PageController@pengumuman')->name('user.pengumuman');
+Route::get('/{postname}/{id}/{year?}/{title?}', 'PageController@postDetail')->name('user.postdetail');
 
 
 Route::get('auth/google', 'Auth\GoogleController@redirectToProvider')->name('register.google');

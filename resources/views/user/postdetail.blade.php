@@ -86,6 +86,7 @@
                   </ul>
                </div><!-- End sidebar categories-->
 
+               @if (isset($recentPost))
                <h3 class="sidebar-title">Recent Posts</h3>
                <div class="sidebar-item recent-posts">
                   <?php $i = 0; ?>
@@ -101,7 +102,7 @@
                   <?php $i++; ?>
                   @endforeach
                </div><!-- End sidebar recent posts-->
-
+               @endif
 
 
             </div><!-- End sidebar -->

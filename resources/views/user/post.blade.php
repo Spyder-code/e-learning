@@ -28,19 +28,17 @@
                   <h2 class="entry-title">
                      <a
                         href="{{ route('user.postdetail', [$postname, $item->id, date('Y', strtotime($item->created_at)), $item->slug]) }}">
-                        {{ ucwords(mb_strimwidth($item->title, 0, 20, '...')) }}</a>
+                        {{ ucwords(str_limit($item->title, $limit = 150, $end = '...')) }}</a>
                   </h2>
                   <div class="entry-meta">
                      <ul>
                         <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>Admin</a></li>
                         <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time
                                  datetime="2020-01-01">{{ date('d F Y', strtotime($item->created_at)) }}</time></a></li>
-                        <!-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a
-                              href="blog-single.html">12 Comments</a></li> -->
                      </ul>
                   </div>
                   <div class="entry-content">
-                     <p>{!! ucfirst(mb_strimwidth($item->content, 0, 300, '...')) !!}</p>
+                     {!! $item->content !!}
                      <div class="read-more">
                         <a
                            href="{{ route('user.postdetail', [$postname, $item->id, date('Y', strtotime($item->created_at)), $item->slug]) }}">Baca
@@ -51,14 +49,6 @@
                @endforeach
 
                {{ $post->links() }}
-
-               <!-- <div class="blog-pagination">
-                  <ul class="justify-content-center">
-                     <li><a href="#">1</a></li>
-                     <li class="active"><a href="#">2</a></li>
-                     <li><a href="#">3</a></li>
-                  </ul>
-               </div> -->
 
             </div><!-- End blog entries list -->
 
@@ -93,7 +83,9 @@
                      @endif
                      <div class="post-item clearfix">
                         <img src="{{ asset('front/img/blog/blog-recent-1.jpg') }}" alt="">
-                        <h4><a href="blog-single.html">{{ ucwords(mb_strimwidth($item->title, 0, 15, '...')) }}</a></h4>
+                        <h4><a
+                              href="blog-single.html">{{ ucwords(str_limit($item->title, $limit = 150, $end = '...')) }}</a>
+                        </h4>
                         <time datetime="2020-01-01">{{ date('d F Y', strtotime($item->created_at)) }}</time>
                      </div>
                      <?php $i++; ?>
