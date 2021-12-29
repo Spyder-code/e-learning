@@ -115,7 +115,7 @@
       <div class="container">
 
          <div class="row">
-            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <!-- <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                <div class="card" style="background-image: url(assets/img/values-1.jpg);">
                   <div class="card-body">
                      <h5 class="card-title"><a href="">Our Mission</a></h5>
@@ -155,7 +155,20 @@
                      <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
                   </div>
                </div>
+            </div> -->
+            @foreach ($post as $item)
+            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+               <div class="card" style="background-image: url(assets/img/values-1.jpg);">
+                  <div class="card-body">
+                     <h5 class="card-title"><a href="">{{ $item->title }}</a></h5>
+                     <p class="card-text">{!! $item->content !!}</p>
+                     <div class="read-more"><a
+                           href="{{ route('user.postdetail', ['berita', $item->id, date('Y', strtotime($item->created_at)), $item->slug]) }}"><i
+                              class="bi bi-arrow-right"></i> Baca Selengkapnya</a></div>
+                  </div>
+               </div>
             </div>
+            @endforeach
          </div>
 
       </div>

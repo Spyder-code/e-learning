@@ -11,7 +11,16 @@ class PageController extends Controller
 {
    public function index() 
    {
-      return view('user.index');
+      $post = array();
+      $berita = Post::where('post_category_id', '1')->orderBy('created_at','DESC')->take(4)->get();
+      foreach ($berita as $item) {
+         $content = $this->cleanContent($item->content);
+         $content = $this->trimContent($content, 150);
+         $item->content = $content;
+         array_push($post, $item);
+      }
+
+      return view('user.index', compact('post'));
    }
 
    private function cleanContent($content) 
