@@ -14,7 +14,7 @@
             <div class="col-md-12 mb-4">
                 <div class="card shadow no-b">
                     <div class="card-header bg-white">
-                        <a href="{{ route('classroom.student', $classroom) }}" class="btn btn-primary btn-xs mr-2"><i
+                        <a href="{{ url()->previous() }}" class="btn btn-primary btn-xs mr-2"><i
                                 class="icon-arrow_back"></i> Back</a>
                         <span class="card-title">{{ date('d-m-Y', strtotime($date)) }}</span>
                     </div>

@@ -28,7 +28,7 @@
                   <h2 class="entry-title">
                      <a
                         href="{{ route('user.postdetail', [$postname, $item->id, date('Y', strtotime($item->created_at)), $item->slug]) }}">
-                        {{ ucwords(str_limit($item->title, $limit = 150, $end = '...')) }}</a>
+                        {{ Str::limit($item->title, 20, '...') }}</a>
                   </h2>
                   <div class="entry-meta">
                      <ul>
@@ -84,7 +84,7 @@
                      <div class="post-item clearfix">
                         <img src="{{ asset('front/img/blog/blog-recent-1.jpg') }}" alt="">
                         <h4><a
-                              href="blog-single.html">{{ ucwords(str_limit($item->title, $limit = 150, $end = '...')) }}</a>
+                              href="blog-single.html">{{ Str::limit($item->title, 20, '...') }}</a>
                         </h4>
                         <time datetime="2020-01-01">{{ date('d F Y', strtotime($item->created_at)) }}</time>
                      </div>

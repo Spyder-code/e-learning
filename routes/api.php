@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::post('login', 'Api\LoginController');
-Route::group(['middleware' => ['auth:api'], 'namespace' => 'Api'], function () {
-    Route::get('quiz_history', 'QuizHistoryController');
-});
+// Route::post('login', 'Api\LoginController');
+// Route::group(['middleware' => ['auth:api'], 'namespace' => 'Api'], function () {
+//     Route::get('quiz_history', 'QuizHistoryController');
+// });
 

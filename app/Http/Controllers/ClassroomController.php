@@ -23,6 +23,7 @@ class ClassroomController extends Controller
     {
         $user = User::whereId(Auth::user()->id)->first();
         if ($user['role'] == 'admin') {
+            return redirect()->route('dashboard');
             $classrooms = Classroom::with('students')->orderBy('id')->paginate(12);
         } elseif ($user['role'] == 'guru') {
             $classrooms = Classroom::all()->where('user_id', Auth::user()->id);

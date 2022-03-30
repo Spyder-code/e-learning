@@ -22,7 +22,7 @@
         </div>
     </header>
     <div class="container-fluid my-3">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-12 mb-3">
                 <div class="card shadow no-b">
                     <div class="card-body">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="{{ Auth::user()->role=='siswa'?'col-md-12':'col-md-8' }} mb-4">
                 <div class="row mb-4">
@@ -187,7 +187,7 @@
                                 <div class="card-header bg-white">
                                     <span class="card-title"><strong>Absensi</strong></span>
                                     <span class="float-right">
-                                        <a href="{{ route('classroom.student', $classroom) }}">Lihat Semua</a>
+                                        <a href="{{ route('classroom.students', $classroom) }}">Lihat Semua</a>
                                     </span>
                                 </div>
                                 <div class="card-body">

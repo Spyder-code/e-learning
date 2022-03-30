@@ -35,7 +35,7 @@
                                             <a href="{{ route('room.show', ['room'=>$item->id]) }}"
                                                class="btn btn-warning btn-xs mr-2"><i
                                                     class="icon icon-eye"></i>Lihat</a>
-                                            <form action="{{ route('room.destroy',['user'=>$item['id']]) }}" method="post">
+                                            <form action="{{ route('room.destroy',['room'=>$item['id']]) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-xs"><i class="icon icon-trash"></i>Hapus</button>

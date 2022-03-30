@@ -92,6 +92,7 @@
                   </ul>
                </li>
                <li><a class="nav-link scrollto" href="#contact">Kontak Kami</a></li>
+               <li><a class="nav-link scrollto" href="{{ route('login') }}">E-learning</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
          </nav><!-- .navbar -->
